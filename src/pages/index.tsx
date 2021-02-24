@@ -2,6 +2,7 @@ import {ExperienceBar} from '../components/ExperienceBar'
 import {Profile} from '../components/Profile'
 import { CompletedChallanges } from '../components/CompletedChallanges'
 import {Countdown} from '../components/Countdown'
+import { ChallangeBox } from '../components/ChallangeBox'
 
 import GlobalStyles from '../styles/global'
 import styles from '../styles/pages/Home.module.css'
@@ -24,7 +25,7 @@ export default function Home() {
             <Countdown/>
           </div>
           <div>
-
+            <ChallangeBox />
           </div>
         </section>
         </div>
