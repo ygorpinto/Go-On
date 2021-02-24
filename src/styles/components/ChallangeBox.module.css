@@ -94,7 +94,7 @@
     font-size: 1rem;
     font-weight: 600;
 
-    transition: filter 0.2s;
+    transition: filter 0.3s;
 }
 
 .challangeActive footer button.challangeFailedButton{
