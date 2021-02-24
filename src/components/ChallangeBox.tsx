@@ -7,7 +7,7 @@ const hasActiveChallange = true
     <div className={styles.challangeBoxContainer}>
         {hasActiveChallange ? 
         (<div className={styles.challangeActive}>
-            <header>Ganhe +400XP</header>
+            <header>Ganhe 400XP</header>
 
             <main>
                 <img src="icons/body.svg" alt="body"/>

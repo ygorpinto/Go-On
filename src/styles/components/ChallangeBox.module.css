@@ -13,9 +13,9 @@
 }
 
 .challangeNotActive{
-display:flex;
-flex-direction: column;
-align-items: center;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .challangeNotActive strong {
@@ -35,4 +35,76 @@ align-items: center;
 
 .challangeNotActive img {
     margin-bottom: 1rem;
+}
+
+.challangeActive {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.challangeActive header {
+    display: flex;
+    justify-content: center;
+    color:var(--blue);
+    font-weight: 600;
+    font-size:1.25rem;
+    padding: 0 2rem 1.5rem;
+    border-bottom: 1px solid var(--gray-line);
+}
+
+.challangeActive main {
+    flex:1;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.challangeActive main strong{
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--title);
+    margin: 1.5rem 0 1rem;
+}
+
+.challangeActive main p{
+    line-height: 1.5;
+}
+
+.challangeActive footer {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:1rem;
+}
+
+.challangeActive footer button {
+    height: 3rem;
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 5px;
+
+    color:var(--white);
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    transition: filter 0.2s;
+}
+
+.challangeActive footer button.challangeFailedButton{
+    background:var(--red);
+}
+
+.challangeActive footer button.challangeSucceededButton{
+background: var(--green);
+}
+
+.challangeActive footer button:hover {
+filter:brightness(0.9);
 }
