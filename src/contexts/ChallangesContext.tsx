@@ -1,4 +1,4 @@
-import {createContext, useState, ReactNode} from 'react'
+import {createContext, useState, ReactNode, useEffect} from 'react'
 import challanges from '../../challenges.json'
 
 interface Challange {
@@ -26,6 +26,11 @@ interface ChallangerProviderProps {
 export const ChallangesContext = createContext({} as ChallangerContextData);
 
 export const ChallangeProvider = ({children}:ChallangerProviderProps) => {
+
+    useEffect(()=>{
+        Notification.requestPermission();
+    },[]);
+
     const [level,setLevel] = useState(1);
     const [currentExperience, setCurrentExperience] = useState(0);
     const [challangesCompleted, setChallangesCompleted] = useState(0);
@@ -43,6 +48,14 @@ export const ChallangeProvider = ({children}:ChallangerProviderProps) => {
         const challange = challanges[randomChallangeIndex];
 
         setActiveChallange(challange);
+
+        new Audio('/notification.mp3').play();
+
+        if (Notification.permission === "granted"){
+            new Notification('Novo Desafio !!!', {
+                body: `Valendo ${challange.amount} XP !`
+            })
+        }
     }
 
     const resetChallange = () => {
