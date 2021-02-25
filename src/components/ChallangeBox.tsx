@@ -3,22 +3,25 @@ import { ChallangesContext } from '../contexts/ChallangesContext'
 import styles from '../styles/components/ChallangeBox.module.css'
 
 export const ChallangeBox = () => {
-const hasActiveChallange = true
+
+const {activeChallange} = useContext(ChallangesContext);
+const {resetChallange} = useContext(ChallangesContext);
 
     return (
     <div className={styles.challangeBoxContainer}>
-        {hasActiveChallange ? 
+        {activeChallange ? 
         (<div className={styles.challangeActive}>
-            <header>Ganhe 400XP</header>
+            <header>Ganhe {activeChallange.amount} de EXP</header>
 
             <main>
-                <img src="icons/body.svg" alt="body"/>
+                <img src={`icons/${activeChallange.type}.svg`} alt="body"/>
                 <strong>Novo Desafio</strong>
-                <p>Levante e faça uma caminhada de 3 min.</p>
+                <p>{activeChallange.description}</p>
             </main>
 
             <footer>
                 <button 
+                onClick={resetChallange}
                 type="button"
                 className={styles.challangeFailedButton}
                 >Falhei
