@@ -6,7 +6,7 @@ export const ChallangeBox = () => {
 
 const {activeChallange} = useContext(ChallangesContext);
 const {resetChallange} = useContext(ChallangesContext);
-
+const {completeChallange} = useContext(ChallangesContext);
     return (
     <div className={styles.challangeBoxContainer}>
         {activeChallange ? 
@@ -29,6 +29,7 @@ const {resetChallange} = useContext(ChallangesContext);
                 <button 
                 type="button"
                 className={styles.challangeSucceededButton}
+                onClick={completeChallange}
                 >Completei
                 </button>
             </footer>
