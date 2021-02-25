@@ -6,6 +6,7 @@ function MyApp({ Component, pageProps }) {
   <ChallangeProvider>
   <Component {...pageProps} />
   </ChallangeProvider>
+ 
   )
 }
 
