@@ -1,5 +1,7 @@
 import {createContext, useState, ReactNode, useEffect} from 'react'
 import challanges from '../../challenges.json'
+import Cookies from 'js-cookie'
+import { LevelUpModal } from '../components/LevelUpModal';
 
 interface Challange {
     type:string,
@@ -21,19 +23,22 @@ interface ChallangerContextData {
 
 interface ChallangerProviderProps {
     children : ReactNode;
+    level:number;
+    currentExp:number;
+    challangesCompleted:number;
 }
 
 export const ChallangesContext = createContext({} as ChallangerContextData);
 
-export const ChallangeProvider = ({children}:ChallangerProviderProps) => {
-
+export const ChallangeProvider = ( { children, ...rest } : ChallangerProviderProps ) => {
+ 
     useEffect(()=>{
         Notification.requestPermission();
     },[]);
 
-    const [level,setLevel] = useState(1);
-    const [currentExperience, setCurrentExperience] = useState(0);
-    const [challangesCompleted, setChallangesCompleted] = useState(0);
+    const [level,setLevel] = useState(rest.level ?? 1);
+    const [currentExperience, setCurrentExperience] = useState(rest.currentExp ?? 0);
+    const [challangesCompleted, setChallangesCompleted] = useState(rest.challangesCompleted ?? 0);
 
     const [activeChallange, setActiveChallange] = useState(null);
 
@@ -72,7 +77,7 @@ export const ChallangeProvider = ({children}:ChallangerProviderProps) => {
         let finalExperience = currentExperience + amount
     
         if (finalExperience >= experienceToNextLevel){
-            finalExperience = finalExperience - experienceToNextLevel
+            finalExperience = finalExperience - experienceToNextLevel;
             levelUp();
         }
 
@@ -80,6 +85,13 @@ export const ChallangeProvider = ({children}:ChallangerProviderProps) => {
         setActiveChallange(null);
         setChallangesCompleted(challangesCompleted + 1)
     }
+
+
+    useEffect(()=>{
+        Cookies.set('level',level.toString())
+        Cookies.set('currentExp',currentExperience.toString())
+        Cookies.set('challangesCompleted',challangesCompleted.toString())
+    },[level,currentExperience,challangesCompleted])
 
     return (
         <ChallangesContext.Provider 
@@ -95,6 +107,7 @@ export const ChallangeProvider = ({children}:ChallangerProviderProps) => {
         completeChallange
         }}>
             {children}
+            <LevelUpModal/>
         </ChallangesContext.Provider>
     );
 
