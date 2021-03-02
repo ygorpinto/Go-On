@@ -12,6 +12,7 @@ import styles from '../styles/pages/Home.module.css'
 import {GetServerSideProps} from 'next'
 import Head from 'next/head'
 import { ToogleDarkMode } from '../components/ToogleDarkMode'
+import {ThemeProvider} from 'styled-components'
 
 
 interface HomeProps {
