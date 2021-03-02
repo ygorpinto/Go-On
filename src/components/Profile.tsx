@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { ChallangesContext } from '../contexts/ChallangesContext';
 import styles from '../styles/components/Profile.module.css'
+import { ToogleDarkMode } from './ToogleDarkMode';
 
 export const Profile = () => {
     const { level } = useContext(ChallangesContext);
@@ -13,6 +14,8 @@ export const Profile = () => {
                     <img src="icons/level.svg" alt="Level" />
             Level {level}</p>
             </div>
+            <ToogleDarkMode/>
+            <img className={styles.darkModeButton} src="/icons/moon.png"/>
         </div>
     );
 }
