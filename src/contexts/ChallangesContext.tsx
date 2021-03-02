@@ -19,6 +19,7 @@ interface ChallangerContextData {
     startNewChallange: () => void;
     resetChallange: () => void;
     completeChallange: () => void;
+    closeLevelUpModal: () => void;
 }
 
 interface ChallangerProviderProps {
@@ -41,11 +42,17 @@ export const ChallangeProvider = ( { children, ...rest } : ChallangerProviderPro
     const [challangesCompleted, setChallangesCompleted] = useState(rest.challangesCompleted ?? 0);
 
     const [activeChallange, setActiveChallange] = useState(null);
+    const [isLevelModalOpen, setIsLevelModalOpen] = useState(false);
 
     const experienceToNextLevel = Math.pow((level+1) * 3,2)
 
     const levelUp = () => {
         setLevel(level+1);
+        setIsLevelModalOpen(true)
+    }
+
+    const closeLevelUpModal = () => {
+        setIsLevelModalOpen(false)
     }
 
     const startNewChallange = () => {
@@ -104,10 +111,11 @@ export const ChallangeProvider = ( { children, ...rest } : ChallangerProviderPro
         startNewChallange,
         activeChallange,
         resetChallange,
-        completeChallange
+        completeChallange,
+        closeLevelUpModal
         }}>
             {children}
-            <LevelUpModal/>
+            { isLevelModalOpen && <LevelUpModal/>}
         </ChallangesContext.Provider>
     );
 
