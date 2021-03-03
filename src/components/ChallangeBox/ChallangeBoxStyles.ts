@@ -1,3 +1,6 @@
+import styled from 'styled-components'
+
+export const ChallangeBoxStyles = styled.div`
 .challangeBoxContainer{
     height: 100%;
 
@@ -108,3 +111,5 @@ background: var(--green);
 .challangeActive footer button:hover {
 filter:brightness(0.9);
 }
+
+`

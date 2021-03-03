@@ -1,7 +1,7 @@
 import { useContext } from 'react'
-import { ChallangesContext } from '../contexts/ChallangesContext'
-import { CountdownContext } from '../contexts/CountdownContext';
-import styles from '../styles/components/ChallangeBox.module.css'
+import { ChallangesContext } from '../../contexts/ChallangesContext'
+import { CountdownContext } from '../../contexts/CountdownContext';
+import { ChallangeBoxStyles } from './ChallangeBoxStyles';
 
 export const ChallangeBox = () => {
 
@@ -20,9 +20,10 @@ export const ChallangeBox = () => {
 
 
     return (
-    <div className={styles.challangeBoxContainer}>
+    <ChallangeBoxStyles>
+    <div className={"challangeBoxContainer"}>
         {activeChallange ? 
-        (<div className={styles.challangeActive}>
+        (<div className={"challangeActive"}>
             <header>Ganhe {activeChallange.amount} de EXP</header>
 
             <main>
@@ -35,18 +36,18 @@ export const ChallangeBox = () => {
                 <button 
                 onClick={handleChallangeFailed}
                 type="button"
-                className={styles.challangeFailedButton}
+                className="challangeFailedButton"
                 >Falhei
                 </button>
                 <button 
                 type="button"
-                className={styles.challangeSucceededButton}
+                className="challangeSucceededButton"
                 onClick={handleChallangeSucceeded}
                 >Completei
                 </button>
             </footer>
         </div>) :
-        (<div className={styles.challangeNotActive}>
+        (<div className="challangeNotActive">
             <strong>Finalize um ciclo para receber um desafio.</strong>
             <p>
                 <img src="icons/level-up.svg" alt="level-up"/>
@@ -54,5 +55,6 @@ export const ChallangeBox = () => {
             </p>
         </div>)}
     </div>
+    </ChallangeBoxStyles>
 )
 }

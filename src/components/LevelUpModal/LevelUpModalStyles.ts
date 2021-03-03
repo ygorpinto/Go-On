@@ -1,3 +1,6 @@
+import styled from 'styled-components'
+
+export const LevelUpModalStyles = styled.div`
 .overlay {
     background: rgba(242,243,245,0.8);
     position:fixed;
@@ -50,3 +53,4 @@
     border: 0;
     font-size: 0px;
 }
+`

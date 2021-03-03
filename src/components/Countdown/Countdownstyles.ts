@@ -1,3 +1,6 @@
+import styled from 'styled-components'
+
+export const CountdownStyles = styled.div`
 .countdownContainer{
     display:flex;
     align-items: center;
@@ -79,3 +82,4 @@
     color: var(--text);
     cursor: not-allowed;
 }
+`

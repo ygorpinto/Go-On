@@ -1,3 +1,7 @@
+import styled from 'styled-components'
+
+export const ProfileStyles = styled.div`
+
 .profileContainer{
     display:flex;
     align-items:center;
@@ -27,3 +31,4 @@
 .profileContainer div p img {
     margin-right: 0.5rem;
 }
+`

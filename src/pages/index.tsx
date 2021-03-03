@@ -1,18 +1,22 @@
-import {ExperienceBar} from '../components/ExperienceBar'
-import {Profile} from '../components/Profile'
-import { CompletedChallanges } from '../components/CompletedChallanges'
-import {Countdown} from '../components/Countdown'
-import { ChallangeBox } from '../components/ChallangeBox'
+import {ExperienceBar} from '../components/ExperienceBar/ExperienceBar'
+import {Profile} from '../components/Profile/Profile'
+import { CompletedChallanges } from '../components/CompletedChallanges/CompletedChallanges'
+import {Countdown} from '../components/Countdown/Countdown'
+import { ChallangeBox } from '../components/ChallangeBox/ChallangeBox'
 import { CountdownProvider } from '../contexts/CountdownContext'
 import { ChallangeProvider } from '../contexts/ChallangesContext'
+import light from '../styles/themes/light'
+import dark from '../styles/themes/dark'
 
 import GlobalStyles from '../styles/global'
 import styles from '../styles/pages/Home.module.css'
 
 import {GetServerSideProps} from 'next'
 import Head from 'next/head'
-import { ToogleDarkMode } from '../components/ToogleDarkMode'
+
 import {ThemeProvider} from 'styled-components'
+import { useState } from 'react'
+
 
 
 interface HomeProps {
@@ -22,9 +26,13 @@ interface HomeProps {
 }
 
 export default function Home(props:HomeProps) {
+
+  const [theme, setTheme] = useState(light)
+
   return (
     <>
     <GlobalStyles/>
+    <ThemeProvider theme={theme}>
     <ChallangeProvider
       level={props.level}
       currentExp = {props.currentExp}
@@ -49,6 +57,7 @@ export default function Home(props:HomeProps) {
         </CountdownProvider>
         </div>
         </ChallangeProvider>
+        </ThemeProvider>
     </>
   )
 }

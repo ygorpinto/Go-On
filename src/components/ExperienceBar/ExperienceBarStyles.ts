@@ -1,3 +1,6 @@
+import styled from 'styled-components'
+
+export const ExperienceBarStyles = styled.div`
 .experienceBar {
     display: flex;
     align-items: center;
@@ -27,3 +30,4 @@
     transform: translateX(-50%);
     top: 12px;
   }
+`

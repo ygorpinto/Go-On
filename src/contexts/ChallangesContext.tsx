@@ -1,7 +1,7 @@
 import {createContext, useState, ReactNode, useEffect} from 'react'
 import challanges from '../../challenges.json'
 import Cookies from 'js-cookie'
-import { LevelUpModal } from '../components/LevelUpModal';
+import { LevelUpModal } from '../components/LevelUpModal/LevelUpModal';
 
 interface Challange {
     type:string,

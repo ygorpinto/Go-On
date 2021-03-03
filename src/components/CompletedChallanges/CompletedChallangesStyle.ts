@@ -1,3 +1,7 @@
+import styled from 'styled-components'
+
+export const CompleteChallangesStyles = styled.div`
+
 .completedChallangesContainer{
     display: flex;
     align-items: center;
@@ -18,3 +22,4 @@
     font-size: 1.5rem;
   }
 
+`

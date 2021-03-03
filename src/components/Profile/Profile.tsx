@@ -1,12 +1,12 @@
 import { useContext } from 'react';
-import { ChallangesContext } from '../contexts/ChallangesContext';
-import styles from '../styles/components/Profile.module.css'
-import { ToogleDarkMode } from './ToogleDarkMode';
+import { ChallangesContext } from '../../contexts/ChallangesContext';
+import { ProfileStyles } from './ProfileStyles';
 
 export const Profile = () => {
     const { level } = useContext(ChallangesContext);
     return (
-        <div className={styles.profileContainer}>
+        <ProfileStyles>
+        <div className="profileContainer">
             <img src="https://avatars.githubusercontent.com/u/73406162?v=4" alt="Ygor Ferreira" />
             <div>
                 <strong>Ygor Ferreira</strong>
@@ -14,8 +14,7 @@ export const Profile = () => {
                     <img src="icons/level.svg" alt="Level" />
             Level {level}</p>
             </div>
-            <ToogleDarkMode/>
-            <img className={styles.darkModeButton} src="/icons/moon.png"/>
         </div>
+        </ProfileStyles>
     );
 }
