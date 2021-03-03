@@ -1,3 +1,6 @@
+import styled from 'styled-components'
+
+export const HomeStyles = styled.div`
 .container {
     height: 100vh;
     max-width: 992px;
@@ -16,3 +19,5 @@
       gap: 6.25rem;
       align-content: center;
   }
+`
+

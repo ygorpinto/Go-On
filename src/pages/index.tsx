@@ -9,13 +9,13 @@ import light from '../styles/themes/light'
 import dark from '../styles/themes/dark'
 
 import GlobalStyles from '../styles/global'
-import styles from '../styles/pages/Home.module.css'
 
 import {GetServerSideProps} from 'next'
 import Head from 'next/head'
 
 import {ThemeProvider} from 'styled-components'
 import { useState } from 'react'
+import { HomeStyles } from '../styles/pages/Homestyles'
 
 
 
@@ -41,7 +41,8 @@ export default function Home(props:HomeProps) {
     <Head>
       <title>Go On</title>
     </Head>
-        <div className={styles.container}>
+      <HomeStyles>
+        <div className="container">
           <ExperienceBar />
           <CountdownProvider>
         <section>
@@ -56,6 +57,7 @@ export default function Home(props:HomeProps) {
         </section>
         </CountdownProvider>
         </div>
+        </HomeStyles>
         </ChallangeProvider>
         </ThemeProvider>
     </>
