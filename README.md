@@ -19,4 +19,6 @@ Realizando os desafios você consegue pontos de exp, avança de level, e o princ
 
 ![](/public/demo1.gif)
 
+![](/public/demo2.gif)
+
 Ainda em desenvolvimento. 
