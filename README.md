@@ -17,6 +17,6 @@ Realizando os desafios você consegue pontos de exp, avança de level, e o princ
 
 #### Demonstração da Aplicação :
 
-![](/demo1.gif)
+![](/public/demo1.gif)
 
 Ainda em desenvolvimento. 
