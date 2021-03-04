@@ -15,7 +15,7 @@ export const LevelUpModalStyles = styled.div`
 }
 
 .container{
-    background: var(--white);
+    background:${props=>props.theme.color.white};
     width:100%;
     max-width: 400px;
     padding: 2rem 3rem;
@@ -28,20 +28,20 @@ export const LevelUpModalStyles = styled.div`
 .container header{
     font-size: 8.75rem;
     font-weight: 600;
-    color: var(--blue);
+    color:${props=>props.theme.color.blue};
     background: url('/icons/levelup.svg') no-repeat center;
     background-size: contain;
 }
 
 .container strong{
     font-size: 2.25rem;
-    color: var(--title);
+    color: ${props=>props.theme.color.title};
 
 }
 
 .container strong{
     font-size: 1.25rem;
-    color: var(--text);
+    color: ${props=>props.theme.color.text};
     margin-top: 0.25;
 }
 

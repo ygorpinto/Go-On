@@ -33,8 +33,8 @@ export default createGlobalStyle`
 }
 
 body {
-  background: var(--background);
-  color: var(--text);
+  background:${props=>props.theme.color.background};
+  color:${props=>props.theme.color.text};
 }
 
 body,

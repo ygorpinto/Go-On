@@ -4,7 +4,7 @@ export const ChallangeBoxStyles = styled.div`
 .challangeBoxContainer{
     height: 100%;
 
-    background: var(--white);
+    background:${props=>props.theme.color.white};
     border-radius: 5px;
     box-shadow: 0 0 68px rgba(0,0,0,0.05);
     padding: 1.5rem 2rem;
@@ -54,7 +54,7 @@ export const ChallangeBoxStyles = styled.div`
     font-weight: 600;
     font-size:1.25rem;
     padding: 0 2rem 1.5rem;
-    border-bottom: 1px solid var(--gray-line);
+    border-bottom: ${props => props.theme.color.grayLine};
 }
 
 .challangeActive main {
@@ -68,7 +68,7 @@ export const ChallangeBoxStyles = styled.div`
 .challangeActive main strong{
     font-size: 2rem;
     font-weight: 600;
-    color: var(--title);
+    color:${props=>props.theme.color.title};
     margin: 1.5rem 0 1rem;
 }
 
@@ -92,7 +92,7 @@ export const ChallangeBoxStyles = styled.div`
     border: 0;
     border-radius: 5px;
 
-    color:var(--white);
+    color:${props=>props.theme.color.white};
 
     font-size: 1rem;
     font-weight: 600;
@@ -101,11 +101,11 @@ export const ChallangeBoxStyles = styled.div`
 }
 
 .challangeActive footer button.challangeFailedButton{
-    background:var(--red);
+    background:${props=>props.theme.color.red};
 }
 
 .challangeActive footer button.challangeSucceededButton{
-background: var(--green);
+background:${props=>props.theme.color.green};
 }
 
 .challangeActive footer button:hover {

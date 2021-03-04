@@ -19,5 +19,10 @@ export const HomeStyles = styled.div`
       gap: 6.25rem;
       align-content: center;
   }
+
+  .switch{
+    position:absolute;
+    right:5%;
+  }
 `
 

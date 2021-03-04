@@ -20,7 +20,7 @@ export const ProfileStyles = styled.div`
 .profileContainer div strong {
     font-size:1.5rem;
     font-weight: 600;
-    color:var(--title);
+    color:${props=>props.theme.color.title};
 }
 
 .profileContainer div strong {

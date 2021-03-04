@@ -5,9 +5,10 @@ import {Countdown} from '../components/Countdown/Countdown'
 import { ChallangeBox } from '../components/ChallangeBox/ChallangeBox'
 import { CountdownProvider } from '../contexts/CountdownContext'
 import { ChallangeProvider } from '../contexts/ChallangesContext'
+
+import Switch from 'react-switch'
 import light from '../styles/themes/light'
 import dark from '../styles/themes/dark'
-
 import GlobalStyles from '../styles/global'
 
 import {GetServerSideProps} from 'next'
@@ -18,7 +19,6 @@ import { useState } from 'react'
 import { HomeStyles } from '../styles/pages/Homestyles'
 
 
-
 interface HomeProps {
   level:number,
   currentExp:number,
@@ -27,12 +27,16 @@ interface HomeProps {
 
 export default function Home(props:HomeProps) {
 
-  const [theme, setTheme] = useState(light)
+  const [theme, setTheme] = useState(dark)
+
+  const handleTheme = () => {
+    setTheme(theme === light ? dark : light)
+  }
 
   return (
     <>
-    <GlobalStyles/>
     <ThemeProvider theme={theme}>
+    <GlobalStyles/>
     <ChallangeProvider
       level={props.level}
       currentExp = {props.currentExp}
@@ -43,6 +47,19 @@ export default function Home(props:HomeProps) {
     </Head>
       <HomeStyles>
         <div className="container">
+          <div className="switch">
+          <Switch
+            checked={theme.title === 'dark'}
+            onChange={handleTheme}
+            onColor={theme.color.text}
+            onHandleColor={theme.color.blue}
+            handleDiameter={22}
+            offColor={theme.color.text}
+            offHandleColor={theme.color.blue}
+            width={50}
+            height={20}
+          />
+          </div>
           <ExperienceBar />
           <CountdownProvider>
         <section>

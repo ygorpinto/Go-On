@@ -6,7 +6,7 @@ export const CountdownStyles = styled.div`
     align-items: center;
     font-family: Rajdhani;
     font-weight: 600;
-    color:var(--title);
+    color:${props=>props.theme.color.title};
 }
 
 .countdownContainer > div {
@@ -16,7 +16,7 @@ export const CountdownStyles = styled.div`
     align-items: center;
     justify-content: space-evenly;
 
-    background: var(--white);
+    background:${props=>props.theme.color.white};
     box-shadow: 0 0 60px rgba(0,0,0,0.05);
     border-radius: 5px;
     font-size:8.5rem;
@@ -53,8 +53,8 @@ export const CountdownStyles = styled.div`
     border:0;
     border-radius: 5px;
 
-    background: var(--blue);
-    color:var(--white);
+    background: ${props=>props.theme.color.blue};
+    color:${props=>props.theme.color.white};
 
     font-size: 1.25rem;
     font-weight: 600;
@@ -64,22 +64,22 @@ export const CountdownStyles = styled.div`
 }
 
 .countdownButton:not(:disabled):hover{
-    background: var(--blue-dark);
+    background:${props=>props.theme.color.blueDark};
 }
 
 .countdownButtonActive{
-    background: var(--white);
-    color:var(--title);
+    background:${props=>props.theme.color.white};
+    color:${props=>props.theme.color.title};
 }
 
 .countdownButtonActive:not(:disabled):hover{
-    color:var(--white);
-    background: var(--red);
+    color:${props=>props.theme.color.white};
+    background:${props=>props.theme.color.red};
 }
 
 .countdownButton:disabled{
-    background: var(--white);
-    color: var(--text);
+    background:${props=>props.theme.color.white};
+    color:${props=>props.theme.color.text};
     cursor: not-allowed;
 }
 `
