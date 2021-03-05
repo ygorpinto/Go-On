@@ -37,7 +37,7 @@ export default function Home(props:HomeProps) {
   const [ session, loading ] = useSession()
     if(session) {
       return <>
-        Signed in as {session.user.email} <br/>
+        Signed in as {session.user.name} <br/>
         <button onClick={() => signOut()}>Sign out</button>
         <>
     <ThemeProvider theme={theme}>
@@ -69,7 +69,7 @@ export default function Home(props:HomeProps) {
           <CountdownProvider>
         <section>
           <div>
-            <Profile/>
+            <Profile userName={session.user.name} userImg={session.user.image}/>
             <CompletedChallanges/>
             <Countdown/>
           </div>
