@@ -17,6 +17,7 @@ import Head from 'next/head'
 import {ThemeProvider} from 'styled-components'
 import { useState } from 'react'
 import { HomeStyles } from '../styles/pages/Homestyles'
+import { useSession, signIn, signOut } from 'next-auth/client'
 
 
 interface HomeProps {
@@ -33,8 +34,12 @@ export default function Home(props:HomeProps) {
     setTheme(theme === light ? dark : light)
   }
 
-  return (
-    <>
+  const [ session, loading ] = useSession()
+    if(session) {
+      return <>
+        Signed in as {session.user.email} <br/>
+        <button onClick={() => signOut()}>Sign out</button>
+        <>
     <ThemeProvider theme={theme}>
     <GlobalStyles/>
     <ChallangeProvider
@@ -78,8 +83,13 @@ export default function Home(props:HomeProps) {
         </ChallangeProvider>
         </ThemeProvider>
     </>
-  )
-}
+      </>
+    }
+    return <>
+      Not signed in <br/>
+      <button onClick={() => signIn()}>Sign in</button>
+    </>
+  }
 
 export const getServerSideProps:GetServerSideProps = async (ctx) => {
 
