@@ -18,6 +18,7 @@ import {ThemeProvider} from 'styled-components'
 import { useState } from 'react'
 import { HomeStyles } from '../styles/pages/Homestyles'
 import { useSession, signIn, signOut } from 'next-auth/client'
+import { ScreenLogStyles } from '../styles/ScreenLogStyles'
 
 
 interface HomeProps {
@@ -33,15 +34,19 @@ export default function Home(props:HomeProps) {
   const handleTheme = () => {
     setTheme(theme === light ? dark : light)
   }
+  const [ session, loading ] = useSession();
 
-  const [ session, loading ] = useSession()
     if(session) {
       return <>
-        Signed in as {session.user.name} <br/>
-        <button onClick={() => signOut()}>Sign out</button>
-        <>
     <ThemeProvider theme={theme}>
     <GlobalStyles/>
+      <ScreenLogStyles>
+        <div className="signOut">
+        <button onClick={() => signOut()}>
+          <img src="/logout.svg"/>
+        </button>
+        </div>
+        <>
     <ChallangeProvider
       level={props.level}
       currentExp = {props.currentExp}
@@ -81,13 +86,23 @@ export default function Home(props:HomeProps) {
         </div>
         </HomeStyles>
         </ChallangeProvider>
-        </ThemeProvider>
     </>
+        </ScreenLogStyles>
+        </ThemeProvider>
       </>
     }
     return <>
-      Not signed in <br/>
+    <ThemeProvider theme={theme}>
+    <GlobalStyles/>
+    <ScreenLogStyles>
+    <div className="signInContainer">
+    <div className="signIn">
+      <p>Entre com sua conta Github :</p>
       <button onClick={() => signIn()}>Sign in</button>
+    </div>
+    </div>
+    </ScreenLogStyles>
+    </ThemeProvider>
     </>
   }
 
