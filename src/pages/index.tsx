@@ -61,12 +61,12 @@ export default function Home(props:HomeProps) {
           <Switch
             checked={theme.title === 'dark'}
             onChange={handleTheme}
-            onColor={theme.color.text}
+            onColor={theme.color.blueDark}
             onHandleColor={theme.color.blue}
             handleDiameter={22}
             offColor={theme.color.text}
             offHandleColor={theme.color.blue}
-            width={50}
+            width={40}
             height={20}
           />
           </div>

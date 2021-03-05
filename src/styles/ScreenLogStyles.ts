@@ -29,6 +29,16 @@ export const ScreenLogStyles = styled.div`
 }
 
 .signOut{
-
+    button {
+        position:absolute;
+        margin-left:1%;
+        margin-top:1%;
+        height:0.3rem;
+        width:2rem;
+        border:none;
+        border-radius:5px;
+        background:${props=>props.theme.color.blueDark};
+        color:${props=>props.theme.color.text};
+    }
 }
 `

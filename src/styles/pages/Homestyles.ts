@@ -22,7 +22,8 @@ export const HomeStyles = styled.div`
 
   .switch{
     position:absolute;
-    right:5%;
+    left:0.7%;
+    top:10%;
   }
 `
 
