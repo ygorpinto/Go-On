@@ -25,14 +25,30 @@ export const ScreenLogStyles = styled.div`
     background:${props=>props.theme.color.darkGray}
 }
 
+    h1{
+        font-size:1.3rem;
+    }
+
+    p{
+        margin-top:1rem;
+        font-size:0.9rem;
+    }
+
     button {
-        margin-top:2rem;
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+        margin-top:1rem;
         height:2rem;
         width:6rem;
         border:none;
         border-radius:5px;
         background:${props=>props.theme.color.black};
         color:${props=>props.theme.color.text};
+
+        img{
+            max-width:20%;
+        }
     }
 
 }

@@ -97,8 +97,9 @@ export default function Home(props:HomeProps) {
     <ScreenLogStyles>
     <div className="signInContainer">
     <div className="signIn">
-      <p>Entre com sua conta Github :</p>
-      <button onClick={() => signIn()}>Sign in</button>
+      <h1>Comece agora a usar a aplicação.</h1>
+      <p>Entre com sua conta Github</p>
+      <button onClick={() => signIn()}>Sign in <img src="/github.svg"/></button>
     </div>
     </div>
     </ScreenLogStyles>
