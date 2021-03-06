@@ -66,8 +66,8 @@ export default function Home(props:HomeProps) {
             handleDiameter={22}
             offColor={theme.color.text}
             offHandleColor={theme.color.blue}
-            width={40}
-            height={20}
+            width={30}
+            height={10}
           />
           </div>
           <ExperienceBar />
