@@ -62,13 +62,17 @@ export const ScreenLogStyles = styled.div`
     button {
         position:absolute;
         margin-left:1%;
-        margin-top:1%;
+        margin-top:1.5%;
         height:0.3rem;
         width:2rem;
         border:none;
         border-radius:5px;
         background:none;
         color:${props=>props.theme.color.text};
+
+        img {
+            min-width:1.5rem;
+        }
     }
 }
 `
