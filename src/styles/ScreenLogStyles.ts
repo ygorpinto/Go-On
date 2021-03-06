@@ -4,6 +4,8 @@ export const ScreenLogStyles = styled.div`
 
 .signInContainer{
     
+    background-image: url("/ngDdte.jpg");
+
     height:100vh;
     width:auto;
     
@@ -22,19 +24,22 @@ export const ScreenLogStyles = styled.div`
     box-shadow:5px 5px rgba(0,0,0,0.05);
     backdrop-filter:blur(5px);
     border-radius:1rem;
-    background:${props=>props.theme.color.darkGray}
+    background:rgba(0,0,0,0.25);
 }
 
     h1{
+        font-family: 'Montserrat', sans-serif;
         font-size:1.3rem;
     }
 
     p{
+        font-family: 'Montserrat', sans-serif;
         margin-top:1rem;
         font-size:0.9rem;
     }
 
     button {
+        font-family: 'Montserrat', sans-serif;
         display:flex;
         justify-content:space-around;
         align-items:center;
